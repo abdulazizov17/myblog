@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Abdulazizov | Blog{% endblock %}
+
+{% block body %}
+  <header class="hero hero-blog">
+    <nav class="nav container">
+      <a href="{% url 'index' %}" class="logo">ABDULAZIZOV<span>DEV</span></a>
+      <div class="nav-links">
+        <a href="{% url 'index' %}#about" data-i18n="navAbout">About</a>
+        <a href="{% url 'index' %}#projects" data-i18n="navProjects">GitHub</a>
+        <a href="{% url 'blog' %}" data-i18n="navBlog">Blog</a>
+        <a href="{% url 'admin_panel' %}" data-i18n="navAdmin">Admin</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button class="lang-btn" type="button" data-lang="uz">UZ</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="ru">RU</button>
+      </div>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="eyebrow" data-i18n="blogEyebrow">Public Blog</p>
+      <h1 data-i18n="blogHeroTitle">Blog postlar</h1>
+      <p class="lead" data-i18n="blogHeroLead">Bu sahifada barcha foydalanuvchi sizning e'lon qilingan postlaringizni ko'radi.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="section-head">
+        <h2 data-i18n="postsTitle">Barcha postlar</h2>
+        <a class="btn small" href="{% url 'admin_panel' %}" data-i18n="goAdminBtn">Admin panel</a>
+      </div>
+      <div id="blogStatus" class="status"></div>
+      <div id="blogList" class="blog-list"></div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/blog.js' %}"></script>
+{% endblock %}

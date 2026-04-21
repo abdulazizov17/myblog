@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdulazizov | Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero hero-blog">
+    <nav class="nav container">
+      <a href="index.html" class="logo">ABDULAZIZOV<span>DEV</span></a>
+      <div class="nav-links">
+        <a href="index.html#about" data-i18n="navAbout">About</a>
+        <a href="index.html#projects" data-i18n="navProjects">GitHub</a>
+        <a href="blog.html" data-i18n="navBlog">Blog</a>
+        <a href="admin.html" data-i18n="navAdmin">Admin</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button class="lang-btn" type="button" data-lang="uz">UZ</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="ru">RU</button>
+      </div>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="eyebrow" data-i18n="blogEyebrow">Public Blog</p>
+      <h1 data-i18n="blogHeroTitle">Blog postlar</h1>
+      <p class="lead" data-i18n="blogHeroLead">Bu sahifada barcha foydalanuvchi sizning e'lon qilingan postlaringizni ko'radi.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="section-head">
+        <h2 data-i18n="postsTitle">Barcha postlar</h2>
+        <a class="btn small" href="admin.html" data-i18n="goAdminBtn">Admin panel</a>
+      </div>
+      <div id="blogStatus" class="status"></div>
+      <div id="blogList" class="blog-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Abdulazizov. <span data-i18n="footerText">Barcha huquqlar himoyalangan.</span></p>
+  </footer>
+
+  <script src="blog.js"></script>
+</body>
+</html>

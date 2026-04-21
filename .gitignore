@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+db.sqlite3
+db.sqlite3-journal
+
+# Environment
+.env
+venv/
+env/
+
+# Media uploads
+media/uploads/*
+!media/uploads/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (old)
+node_modules/

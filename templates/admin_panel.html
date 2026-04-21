@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Abdulazizov | Admin{% endblock %}
+
+{% block body %}
+  <header class="hero hero-blog">
+    <nav class="nav container">
+      <a href="{% url 'index' %}" class="logo">ABDULAZIZOV<span>DEV</span></a>
+      <div class="nav-links">
+        <a href="{% url 'index' %}#about" data-i18n="navAbout">About</a>
+        <a href="{% url 'index' %}#projects" data-i18n="navProjects">GitHub</a>
+        <a href="{% url 'blog' %}" data-i18n="navBlog">Blog</a>
+        <a href="{% url 'admin_panel' %}" data-i18n="navAdmin">Admin</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button class="lang-btn" type="button" data-lang="uz">UZ</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="ru">RU</button>
+      </div>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="eyebrow" data-i18n="adminEyebrow">Admin Studio</p>
+      <h1 data-i18n="adminHeroTitle">Blog boshqaruvi</h1>
+      <p class="lead" data-i18n="adminHeroLead">Bu qism faqat siz uchun: kirish qiling, post yozing, media yuklang va boshqaring.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container" id="loginSection">
+      <div class="card login-card">
+        <h2 data-i18n="loginTitle">Admin login</h2>
+        <form id="loginForm" class="grid-form">
+          <input id="username" type="text" autocomplete="username" placeholder="Username" data-i18n-placeholder="usernamePlaceholder" required />
+          <input id="password" type="password" autocomplete="current-password" placeholder="Password" data-i18n-placeholder="passwordPlaceholder" required />
+          <button class="btn" type="submit" data-i18n="loginBtn">Kirish</button>
+        </form>
+        <p id="loginStatus" class="status"></p>
+      </div>
+    </section>
+
+    <section class="section container hidden" id="adminSection">
+      <div class="card admin-topbar">
+        <p id="adminWelcome" class="status"></p>
+        <button id="logoutBtn" class="btn secondary" data-i18n="logoutBtn">Chiqish</button>
+      </div>
+
+      <div class="card blog-editor enhanced">
+        <h2 data-i18n="editorTitle">Yangi post yozish</h2>
+        <form id="postForm" class="grid-form">
+          <input id="postTitle" type="text" placeholder="Post sarlavhasi" data-i18n-placeholder="postTitlePlaceholder" required />
+          <textarea id="postContent" rows="6" placeholder="Post matni..." data-i18n-placeholder="postContentPlaceholder"></textarea>
+
+          <div class="upload-box">
+            <label for="postFiles" class="upload-label" data-i18n="uploadLabel">Rasm, video yoki fayl biriktirish</label>
+            <input id="postFiles" type="file" multiple />
+            <p class="upload-hint" data-i18n="uploadHint">Har bir fayl maksimal 25MB. Bir postga 6 ta fayl.</p>
+          </div>
+
+          <div id="pendingPreview" class="attachment-preview"></div>
+          <p id="postStatus" class="status"></p>
+
+          <button class="btn" type="submit" data-i18n="publishBtn">Postni e'lon qilish</button>
+        </form>
+      </div>
+
+      <div class="section-head admin-post-head">
+        <h2 data-i18n="myPostsTitle">Mening postlarim</h2>
+        <a class="btn small" href="{% url 'blog' %}" data-i18n="openPublicBtn">Public blogni ochish</a>
+      </div>
+      <div id="postsStatus" class="status"></div>
+      <div id="adminPosts" class="blog-list"></div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/admin.js' %}"></script>
+{% endblock %}

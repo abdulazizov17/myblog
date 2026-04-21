@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdulazizov | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container">
+      <a href="index.html" class="logo">ABDULAZIZOV<span>DEV</span></a>
+      <div class="nav-links">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#projects" data-i18n="navProjects">GitHub</a>
+        <a href="blog.html" data-i18n="navBlog">Blog</a>
+        <a href="admin.html" data-i18n="navAdmin">Admin</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button class="lang-btn" type="button" data-lang="uz">UZ</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="ru">RU</button>
+      </div>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="eyebrow" data-i18n="heroEyebrow">Portfolio + Blog</p>
+      <h1 data-i18n="heroTitle">Salom, men Abdulazizov Asilbek.</h1>
+      <p class="lead" data-i18n="heroLead">
+        Men TATU talabasi va Backend dasturchiman. Bu saytda men haqimda qisqacha ma'lumot, GitHub loyihalarim va blog yozuvlarimni topasiz.
+      </p>
+      <a class="btn" href="#projects" data-i18n="heroBtn">Loyihalarni ko'rish</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section container">
+      <h2 data-i18n="aboutTitle">Men haqimda</h2>
+      <div class="card about-grid">
+        <div>
+          <h3 data-i18n="aboutShortTitle">Qisqacha</h3>
+          <p data-i18n="aboutShortText">
+            Men zamonaviy web texnologiyalar bilan ishlayman: HTML, CSS, JavaScript va Backend texnologiyalar.
+            Maqsadim - foydali, chiroyli va tez ishlaydigan mahsulotlar yaratish.
+          </p>
+        </div>
+        <div>
+          <h3 data-i18n="aboutSkillsTitle">Konikmalar</h3>
+          <ul class="skills">
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>Linux</li>
+            <li>API</li>
+            <li>Git & GitHub</li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <div class="section-head">
+        <h2 data-i18n="projectsTitle">GitHub loyihalarim</h2>
+        <div class="github-input">
+          <label for="githubUser" class="sr-only">GitHub username</label>
+          <input id="githubUser" type="text" data-i18n-placeholder="githubPlaceholder" placeholder="GitHub username" />
+          <button id="loadProjects" class="btn small" data-i18n="loadBtn">Yuklash</button>
+        </div>
+      </div>
+      <p class="projects-intro" data-i18n="projectsIntro">Asosiy ishlangan loyihalarim va ularda qilgan ishlarim:</p>
+      <div id="projectStatus" class="status"></div>
+      <div id="projectList" class="project-grid"></div>
+    </section>
+
+    <section class="section container">
+      <div class="card blog-cta">
+        <h2 data-i18n="blogCardTitle">Blog ommaviy sahifada ko'rinadi</h2>
+        <p data-i18n="blogCardText">Hamma foydalanuvchi blog postlarni ko'radi. Yozish va boshqarish esa Admin panel orqali qilinadi.</p>
+        <div class="cta-actions">
+          <a class="btn" href="blog.html" data-i18n="blogCardBtn">Blog sahifasiga o'tish</a>
+          <a class="btn secondary" href="admin.html" data-i18n="adminCardBtn">Admin panelga kirish</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Abdulazizov. <span data-i18n="footerText">Barcha huquqlar himoyalangan.</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

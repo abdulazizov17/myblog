@@ -14,6 +14,10 @@ env/
 media/uploads/*
 !media/uploads/.gitkeep
 
+# Uploads (keep directory but ignore uploaded files)
+uploads/*
+!uploads/.gitkeep
+
 # IDE
 .idea/
 .vscode/
@@ -23,5 +27,5 @@ media/uploads/*
 .DS_Store
 Thumbs.db
 
-# Node (old)
+# Node
 node_modules/

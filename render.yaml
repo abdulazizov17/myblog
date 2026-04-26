@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: abdulazizov-blog
+    runtime: node
+    repo: https://github.com/abdulazizov17/myblog.git
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true

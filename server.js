@@ -1,4 +1,4 @@
-﻿const express = require("express");
+const express = require("express");
 const multer = require("multer");
 const crypto = require("node:crypto");
 const fs = require("node:fs");
@@ -350,8 +350,10 @@ app.use((err, _req, res, _next) => {
   return res.status(500).json({ message: "Unexpected server error" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+const HOST = process.env.HOST || "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server running at http://${HOST}:${PORT}`);
   if (ADMIN_USERNAME === "admin" && ADMIN_PASSWORD === "change-me-123") {
     console.log("Default admin credentials detected. Set ADMIN_USERNAME and ADMIN_PASSWORD in environment.");
   }
